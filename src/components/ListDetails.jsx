@@ -10,7 +10,7 @@ import {
 import WhishlistCard from "./WhishlistCard";
 import { MdSaveAs } from "react-icons/md";
 
-// ListTitleDescription Component
+
 const ListTitleDescription = ({
   listName,
   setListName,
@@ -44,12 +44,12 @@ const ListTitleDescription = ({
   </div>
 );
 
-// MovieGrid Component
+
 const MovieGrid = ({ movies, handleRemoveMovie, handleToggleSeen }) => (
   <div>
     <h2 className="text-lg md:text-xl mb-2">Movies in this list:</h2>
 
-    {/* Responsive grid for movies */}
+  
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
       {movies.map((movie) => (
         <WhishlistCard
@@ -63,7 +63,7 @@ const MovieGrid = ({ movies, handleRemoveMovie, handleToggleSeen }) => (
   </div>
 );
 
-// ListDetails Component
+
 const ListDetails = () => {
   const { listId } = useParams();
   const dispatch = useDispatch();
@@ -101,7 +101,7 @@ const ListDetails = () => {
 
   return (
     <div className="container mx-auto p-4">
-      {/* Title and Description */}
+  
       <ListTitleDescription
         listName={listName}
         setListName={setListName}
@@ -110,7 +110,6 @@ const ListDetails = () => {
         handleEditList={handleEditList}
       />
 
-      {/* Movie Grid */}
       <MovieGrid
         movies={watchlist.movies}
         handleRemoveMovie={handleRemoveMovie}
